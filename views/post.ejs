@@ -1,0 +1,26 @@
+<%- include("partials/memberHome"); -%>
+
+
+
+
+<section class="post-content">
+      <div>
+        <% posts.forEach(function(post){ %>
+        <form action="/delete" method="post">
+          <div>
+            <h1>
+              <%=  post.title %>
+              <button class="btn-delete btn btn-danger btn-sm"type="submit" name="button" value="<%=post._id%>">Delete</button>
+            </h1>
+            <p><%=  post.content %></p>
+          </div>
+          <input type="hidden" name="postName" value="<%=post.Title%>"></input>
+        </form>
+        <% }) %>
+      </section>
+
+
+
+
+
+  <%- include("partials/footer"); -%>
